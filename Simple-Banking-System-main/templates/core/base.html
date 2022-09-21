@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="Simple Banking System" />
+        <meta name="author" content="Rushwanth" />
+        <title>
+            {% block head_title %}Banking System{% endblock %}
+        </title>
+        <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+
+        {% block head_extra %}{% endblock %}
+    </head>
+    <body style="background-image:url('{% static 'image/img.jpg'%}');">
+        {% block body %}
+            {% include 'core/navbar.html' %}
+            <div class="lg:container lg:mx-auto">
+                {% include 'core/messages.html' %}
+                {% block content %}
+                <!-- Add content here -->
+                {% endblock %}
+            </div>
+            <div class="container mx-auto px-6">
+                <div class="mt-5 flex flex-col items-center">
+                    <div class="sm:w-2/3 text-center py-6">
+                        <p class="text-md text-red-600 font-bold mb-2">
+                            © 2021 Developed using Django Framework
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        {% endblock %}
+        
+    </body>
+</html>
